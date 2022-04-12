@@ -10,16 +10,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 @media screen and (max-width: 500px) {
   .footer {
     background-color: black;
-    color: #fff;
     width: 100%;
     height: 60px;
-  }
-  .footer p {
-    padding-top: 18px;
+    p {
+      padding-top: 18px;
+      text-align: center;
+      color: #fff;
+    }
   }
 }
 
@@ -29,14 +30,14 @@ export default {
     height: 74px;
     background-color: #1b1310;
     border-bottom: 2px solid #fff;
-  }
-  .footer p {
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 29px;
-    padding: 29px;
-    padding-bottom: 31px;
+    p {
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 29px;
+      padding: 29px;
+      padding-bottom: 31px;
+    }
   }
 }
 </style>

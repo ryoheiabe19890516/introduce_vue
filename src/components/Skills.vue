@@ -1,6 +1,9 @@
 <template>
   <div class="content" id="news">
     <h2 class="news">Skills</h2>
+    <div class="lang">
+      <span>HTML</span>
+    </div>
     <ul id="newNews">
       <li v-for="item in arrayNews" :key="item.message">
         <div class="image-x">
@@ -33,7 +36,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @media screen and (max-width: 500px) {
   .content {
     text-align: initial;
@@ -74,7 +77,7 @@ export default {
     display: list-item;
     box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.24);
     margin: 0 13px;
-    width: 242px;
+    width: 300px;
     height: auto;
     text-align: -webkit-match-parent;
   }
@@ -129,9 +132,11 @@ export default {
   #news ul {
     list-style: none;
     justify-content: center;
+    padding: 0;
   }
   #news {
     margin-top: 150px;
+    text-align: center;
   }
   .news {
     margin-bottom: 100px;
@@ -162,7 +167,7 @@ export default {
   .text-x {
     width: 100%;
     height: 145px;
-    padding: 25px 40px;
+    padding: 25px;
     box-sizing: border-box;
   }
 
