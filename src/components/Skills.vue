@@ -1,11 +1,9 @@
 <template>
   <div class="content" id="news">
     <h2 class="news">Skills</h2>
-    <div class="lang">
-      <span>HTML</span>
-    </div>
+    <h3>Languages/flameworks</h3>
     <ul id="newNews">
-      <li v-for="item in arrayNews" :key="item.message">
+      <li v-for="item in arraySkills" :key="item.message">
         <div class="image-x">
           <img
             src="@/assets/images/task/F3550BB1-9190-436E-B56C-97881339CD07_1_105_cのコピー.jpg"
@@ -15,6 +13,33 @@
         </div>
         <div class="text-x">
           <p>{{ item.message }}</p>
+          <div>
+            <v-progress-linear v-model="item.value">{{
+              item.value
+            }}</v-progress-linear>
+            <p>{{ item.value }} %</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <h3 class="news">Others</h3>
+    <ul>
+      <li v-for="item in arrayOthers" :key="item.message">
+        <div class="image-x">
+          <img
+            src="@/assets/images/task/F3550BB1-9190-436E-B56C-97881339CD07_1_105_cのコピー.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="text-x">
+          <p>{{ item.message }}</p>
+          <div>
+            <v-progress-linear v-model="item.value">{{
+              item.value
+            }}</v-progress-linear>
+          </div>
         </div>
       </li>
     </ul>
@@ -26,11 +51,14 @@ export default {
   name: "AbeSkills",
   data: function () {
     return {
-      arrayNews: [
-        { message: "news111" },
-        { message: "news222" },
-        { message: "news333" },
+      arraySkills: [
+        { message: "HTML/CSS", value: 50 },
+        { message: "Java Script", value: 50 },
+        { message: "PHP", value: 30 },
+        { message: "Vue.js", value: 50 },
+        { message: "React.js", value: 40 },
       ],
+      arrayOthers: [{ message: "GitHub", value: 60 }],
     };
   },
 };
