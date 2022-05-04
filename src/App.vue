@@ -259,8 +259,6 @@ export default {
 /* 以下 min-width 500  */
 
 @media screen and (min-width: 501px) {
-  h1,
-  h3,
   p {
     font-family: "Noto toians JP", sans-serif;
     letter-spacing: 1px;

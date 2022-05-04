@@ -4,41 +4,32 @@
     <h3>Languages/flameworks</h3>
     <ul id="newNews">
       <li v-for="item in arraySkills" :key="item.message">
-        <div class="image-x">
-          <img
-            src="@/assets/images/task/F3550BB1-9190-436E-B56C-97881339CD07_1_105_cのコピー.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div class="text-x">
-          <p>{{ item.message }}</p>
-          <div>
-            <v-progress-linear v-model="item.value">{{
-              item.value
-            }}</v-progress-linear>
-            <p>{{ item.value }} %</p>
+        <div class="skills">
+          <div class="text-x">
+            <span>{{ item.message }}</span>
+            <div class="skill">
+              <v-progress-linear v-model="item.value" rounded>{{
+                item[0]
+              }}</v-progress-linear>
+              <div class="text-number">{{ item.value }}%</div>
+            </div>
           </div>
         </div>
       </li>
     </ul>
 
-    <h3 class="news">Others</h3>
+    <h3>Others</h3>
     <ul>
       <li v-for="item in arrayOthers" :key="item.message">
-        <div class="image-x">
-          <img
-            src="@/assets/images/task/F3550BB1-9190-436E-B56C-97881339CD07_1_105_cのコピー.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div class="text-x">
-          <p>{{ item.message }}</p>
-          <div>
-            <v-progress-linear v-model="item.value">{{
-              item.value
-            }}</v-progress-linear>
+        <div class="skill">
+          <div class="text-x">
+            <span>{{ item.message }}</span>
+            <div>
+              <v-progress-linear v-model="item.value" rounded
+                >{{ item[0] }}
+                <p>{{ item.value }}%</p></v-progress-linear
+              >
+            </div>
           </div>
         </div>
       </li>
@@ -109,35 +100,6 @@ export default {
     height: auto;
     text-align: -webkit-match-parent;
   }
-  .image-x {
-    position: relative;
-    margin: 0 0.5px;
-    transition: 0.3s;
-    overflow: hidden;
-    width: 320px;
-    height: 200px;
-    transition-duration: 0.5s;
-  }
-  .image-x img {
-    transition-duration: 0.5s;
-  }
-  .image-x:hover img {
-    transform: scale(1.3);
-    transition-duration: 0.5s;
-    transition: 0.3s;
-  }
-  .text-x p {
-    text-align: initial;
-    font-size: 13.2px;
-    font-family: Noto Sans CJK JP;
-    line-height: 2;
-    letter-spacing: 1.2px;
-    font-weight: bold;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 20px;
-    margin-bottom: 50px;
-  }
 }
 @media screen and (min-width: 501px) {
   h2 {
@@ -148,7 +110,7 @@ export default {
   .content h2 {
     text-align: center;
     color: #000000;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     margin-top: 0%;
   }
   .content p {
@@ -161,6 +123,7 @@ export default {
     list-style: none;
     justify-content: center;
     padding: 0;
+    margin-bottom: 60px;
   }
   #news {
     margin-top: 150px;
@@ -169,33 +132,19 @@ export default {
   .news {
     margin-bottom: 100px;
   }
-
+  h3 {
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
   #news ul li {
     box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.24);
     margin: 0 15px;
     display: inline-block;
   }
-
-  .image-x {
-    position: relative;
-    margin: 0 0.5px;
-    transition: 0.3s;
-    overflow: hidden;
-    height: 200px;
-    transition-duration: 0.5s;
-  }
-  .image-x img {
-    transition-duration: 0.5s;
-  }
-  .image-x:hover img {
-    transform: scale(1.3);
-    transition-duration: 0.5s;
-    transition: 0.3s;
-  }
   .text-x {
-    width: 100%;
-    height: 145px;
-    padding: 25px;
+    width: 350px;
+    height: 80px;
+    padding: 15px;
     box-sizing: border-box;
   }
 
@@ -203,6 +152,13 @@ export default {
     font-size: 13px;
     color: #000000;
     margin-right: 65px;
+  }
+  .skill {
+    color: #606266;
+    display: flex;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 3px;
   }
 }
 </style>
