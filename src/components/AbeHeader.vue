@@ -38,6 +38,7 @@ export default {
   color: #fff;
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 0%;
 }
 ul.menu {
   display: flex;

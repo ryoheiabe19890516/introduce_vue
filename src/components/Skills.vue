@@ -8,9 +8,12 @@
           <div class="text-x">
             <span>{{ item.message }}</span>
             <div class="skill">
-              <v-progress-linear v-model="item.value" rounded>{{
-                item[0]
-              }}</v-progress-linear>
+              <v-progress-linear
+                :value="item.value"
+                rounded
+                color="red darken-2"
+                height="6px"
+              />
               <div class="text-number">{{ item.value }}%</div>
             </div>
           </div>
@@ -19,16 +22,16 @@
     </ul>
 
     <h3>Others</h3>
-    <ul>
+    <ul id="newNews">
       <li v-for="item in arrayOthers" :key="item.message">
-        <div class="skill">
+        <div class="skills">
           <div class="text-x">
             <span>{{ item.message }}</span>
-            <div>
-              <v-progress-linear v-model="item.value" rounded
+            <div class="skill">
+              <v-progress-linear :value="item.value" rounded
                 >{{ item[0] }}
-                <p>{{ item.value }}%</p></v-progress-linear
-              >
+              </v-progress-linear>
+              <div class="text-number">{{ item.value }}%</div>
             </div>
           </div>
         </div>
@@ -138,8 +141,15 @@ export default {
   }
   #news ul li {
     box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.24);
-    margin: 0 15px;
+    margin: 15px;
     display: inline-block;
+  }
+  .text-number {
+    line-height: 3.1px;
+    color: #606266;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
   }
   .text-x {
     width: 350px;
@@ -147,7 +157,9 @@ export default {
     padding: 15px;
     box-sizing: border-box;
   }
-
+  .skills {
+    border-radius: 100px;
+  }
   .text p {
     font-size: 13px;
     color: #000000;
@@ -159,6 +171,9 @@ export default {
     vertical-align: middle;
     line-height: 1;
     padding: 3px;
+  }
+  .skill-number {
+    border-radius: 100px;
   }
 }
 </style>

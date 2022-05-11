@@ -11,47 +11,11 @@
           <h3>{{ about.description }}<br />{{ about.more }}</h3>
           <p>{{ about.detail }}</p>
         </section>
-
         <!-- <section class="content" id="service">
         <AbeService />
-      </section> -->
-
+        </section> -->
         <section class="content" id="news"><Skills /></section>
-
-        <section id="contact">
-          <h2>お問い合わせ</h2>
-          <form action="">
-            <div class="input4">
-              <div>
-                <dl class="input">
-                  <dt>{{ Moldon }}</dt>
-                  <dd><input type="text" style="" value="" /></dd>
-                </dl>
-              </div>
-              <div>
-                <dl class="input">
-                  <dt>電話番号</dt>
-                  <dd><input type="text" style="" value="" /></dd>
-                </dl>
-              </div>
-              <div>
-                <dl class="input">
-                  <dt>メールアドレス</dt>
-                  <dd><input type="text" style="" value="" /></dd>
-                </dl>
-              </div>
-              <div>
-                <dl class="textarea">
-                  <dt>お問い合わせ内容</dt>
-                  <dd class="area">
-                    <input type="textarea" style="height: 171px" value="" />
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </form>
-          <input type="submit" value="送信" class="button" />
-        </section>
+        <AbeContact />
       </div>
     </div>
     <v-main> </v-main>
@@ -65,6 +29,7 @@
 import AbeHeader from "./components/AbeHeader.vue";
 import Skills from "./components/Skills.vue";
 import AbeFooter from "./components/Footer.vue";
+import AbeContact from "./components/Contact.vue";
 
 export default {
   name: "App",
@@ -75,6 +40,7 @@ export default {
     AbeHeader,
     Skills,
     AbeFooter,
+    AbeContact,
   },
 
   data: function () {
@@ -101,7 +67,6 @@ export default {
           " 弊社では、リリース後もサポートさせていただきます。サービスはリリース後に様々な課題にぶつかります。そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。",
         imgSrc: require("@/assets/images/task/FFA55F6A-A7EB-4B82-9712-475F4784E8A3_1_105_c.jpeg"),
       },
-      Moldon: "あべ阿部アベ",
     };
   },
 };
@@ -229,31 +194,6 @@ export default {
     font-size: 16px;
     padding-right: 170px;
   }
-  .button {
-    width: 235px;
-    height: 59px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 40px;
-    font-size: 15pt;
-    font-weight: bold;
-    text-align: center;
-    padding: 16px 47px;
-    margin-top: 50px;
-    margin-bottom: 45px;
-    background: #000000;
-    color: #ffffff;
-    line-height: 7px;
-    transition: 0.3s;
-    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.24);
-    border: 2px solid #000000;
-    height: 60px;
-  }
-  .button:hover {
-    box-shadow: none;
-    color: #000000;
-    background: #ffffff;
-  }
 }
 
 /* 以下 min-width 500  */
@@ -346,7 +286,9 @@ export default {
     margin-top: 34px;
     margin-bottom: 40px;
   }
-
+  .content-wrapper {
+    margin: 0 140px;
+  }
   #service .imageText .image {
     flex: none;
     overflow: hidden;
@@ -390,60 +332,10 @@ export default {
     text-align: center;
     font: size 500px;
   }
-
-  .footer {
-    width: 100%;
-    height: 74px;
-    background-color: #1b1310;
-    border-bottom: 2px solid #fff;
-  }
-  .footer p {
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 29px;
-    padding: 29px;
-    padding-bottom: 31px;
-  }
-
-  form {
-    text-align: center;
-    border-width: thick;
-  }
-
-  input {
-    resize: none;
-    width: 700px;
-  }
-
-  dt {
-    text-align: left;
-    padding-left: 380px;
-  }
-  .button {
-    width: 235px;
-    height: 59px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 40px;
-    font-size: 15pt;
-    font-weight: bold;
-    text-align: center;
-    padding: 16px 47px;
-    margin-top: 50px;
-    margin-bottom: 45px;
-    background: #000000;
-    color: #ffffff;
-    line-height: 7px;
-    transition: 0.3s;
-    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.24);
-    border: 2px solid #000000;
-    height: 60px;
-  }
-  .button:hover {
-    box-shadow: none;
-    color: #000000;
-    background: #ffffff;
-  }
+}
+</style>
+<style lang="scss">
+.v-progress-linear__determinate {
+  border-radius: 10px;
 }
 </style>

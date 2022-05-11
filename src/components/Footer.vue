@@ -23,20 +23,15 @@ export default {
     }
   }
 }
-
 @media screen and (min-width: 501px) {
   .footer {
     width: 100%;
-    height: 74px;
     background-color: #1b1310;
-    border-bottom: 2px solid #fff;
     p {
       color: #fff;
       font-size: 14px;
       text-align: center;
-      margin-top: 29px;
-      padding: 29px;
-      padding-bottom: 31px;
+      margin-top: 25px;
     }
   }
 }
